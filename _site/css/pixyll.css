@@ -166,7 +166,7 @@ blockquote p {
 
 h1,
 .h1 {
-  font-size: 2.998rem; }
+  font-size: 1.75rem; }
 
 h2,
 .h2 {
@@ -837,7 +837,7 @@ textarea {
   box-shadow: 0 0 2px rgba(0, 118, 223, 0.5); }
 
 html {
-  font-size: 14px; }
+  font-size: 11px; }
 
 abbr {
   border-bottom: 1px black dotted;
@@ -1080,7 +1080,7 @@ blockquote footer {
 
   h1,
   .h1 {
-    font-size: 2.998rem; }
+    font-size: 1.75rem; }
 
   .site-header {
     text-align: left; }

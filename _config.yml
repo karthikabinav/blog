@@ -19,7 +19,7 @@ show_post_footers:    true
 show_social_icons:    true
 ajaxify_contact_form: true
 enable_mathjax: true
-extended_fonts: true
+extended_fonts: false
 enable_anchorjs: true
 
 # Disqus post comments
