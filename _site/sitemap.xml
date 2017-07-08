@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4443/jekyll/pixyll/2014/06/08/pixyll-has-pagination/</loc>
-<lastmod>2014-06-08T16:51:29+05:30</lastmod>
+<loc>http://localhost:4443/misc/2014/06/06/chandrakhani-pass-1/</loc>
+<lastmod>2014-06-06T20:04:53+05:30</lastmod>
 </url>
 <url>
-<loc>http://localhost:4443/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</loc>
-<lastmod>2014-06-09T18:02:18+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4443/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</loc>
-<lastmod>2014-06-10T18:01:19+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4443/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</loc>
-<lastmod>2014-06-11T21:01:19+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4443/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/</loc>
-<lastmod>2015-07-11T00:00:00+05:30</lastmod>
+<loc>http://localhost:4443/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/</loc>
+<lastmod>2014-06-08T16:22:03+05:30</lastmod>
 </url>
 <url>
 <loc>http://localhost:4443/404.html</loc>
@@ -34,8 +22,5 @@
 </url>
 <url>
 <loc>http://localhost:4443/thanks/</loc>
-</url>
-<url>
-<loc>http://localhost:4443/page2/</loc>
 </url>
 </urlset>
