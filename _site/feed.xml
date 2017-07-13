@@ -7,6 +7,102 @@
     <atom:link href="http://localhost:4443/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Collaborating with Latex and git</title>
+        <description>&lt;p&gt;In this post, I will describe a setup I recently settled upon, which makes writing papers when collaborating easy. This setup is especially
+useful, when one or more of the collaborators aren’t tech-savvy and can’t use git.&lt;/p&gt;
+
+&lt;p&gt;In our group, we have been using Dropbox as the default sharing service to keep common latex files. It is convenient and we don’t have to exchange
+files over emails. We usually face the following two issues:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Dropbox does not have a version control and we usually resort to creating folders which looks like &lt;em&gt;backup-mm-dd&lt;/em&gt;, &lt;em&gt;old_copy_blah&lt;/em&gt;, etc. Not once have these
+backups been useful. In fact, more often than not, it only creates more confusion.&lt;/li&gt;
+  &lt;li&gt;Inevitably, we end up using &lt;em&gt;fancy&lt;/em&gt; Latex packages and one or more of the co-authors complain they are unable to compile it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Solution to (1) is using git. However, git comes with a &lt;em&gt;tiny&lt;/em&gt; bit of learning curve which most people get intimidated by. In principle, we just need one of the 
+collaborators to be comfortable with using git (In this post, we are going to assume you are that person).
+Solution to (2) is to use an online latex compiler such as sharelatex, overleaf, etc. In an ideal world, you would want &lt;em&gt;one&lt;/em&gt; solution
+which solves the issue of cloud storage, version control and online compilation of Latex. That ideal world is expensive (i.e., paid versions of sharelatex, overleaf support all three simultaneously).
+Now I will describe the work-around we use which is &lt;strong&gt;free&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We use Dropbox for cloud storage, overleaf for online latex compilation and git for version control. The procedure is described assuming a Mac operating system. The setup is as follows.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create a folder in Dropbox containing the main files. For this example we will call the folder MyPaper, with the following path
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Dropbox/MyPaper
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Let us setup a &lt;em&gt;local&lt;/em&gt; version of this folder. I am going to name the folder “localDropbox” and the corresponding path to be
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/localDropbox
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will first install this awesome software &lt;a href=&quot;https://github.com/remram44/gitobox&quot;&gt;Gitobox&lt;/a&gt;. If you have &lt;a href=&quot;https://pip.pypa.io/en/stable/installing/&quot;&gt;pip&lt;/a&gt; installed, you can simply run
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install gitobox
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Now go into the previously created folder and initialize an empty git repository.&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/localDropbox
+git init
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fire up gitobox, which continuously “monitors” changes in your dropbox folder. Run the following command
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gitobox ~/Dropbox/MyPaper ~/localDropbox/.git
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Finally, “clone” a copy of this to get your local working copy.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone myWorkingPaper localDropbox
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The above steps completes the steps for working with dropbox and git. You can make all your local changes in myWorkingPaper, while keeping gitobox running (line 4).
+Once you are ready to commit, follow the usual commands&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -a -m &quot;Your commit message&quot;
+git pull origin master
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will commit your changes to the localDropbox git folder. The running gitobox will &lt;em&gt;automatically&lt;/em&gt; take care of syncing this with the dropbox.&lt;/p&gt;
+
+&lt;p&gt;The second thing I will now describe is to sync it with an online editor (we predominantly use overleaf since it allows access via git). For this post, let the git url be
+&lt;a href=&quot;https://www.overleaf.com/abcdefghij&quot;&gt;https://www.overleaf.com/abcdefghij&lt;/a&gt;. First go into the myWorkingPaper folder and perform the following command. This command essentially adds overleaf as a remote and &lt;em&gt;forces&lt;/em&gt; the 
+history to be the same as the one maintained locally. This step is needed since overleaf creates a default initial commit.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add overleaf https://www.overleaf.com/abcdefghij
+git push --force overleaf master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A word of caution, &lt;em&gt;force&lt;/em&gt; push only if the document in overleaf is empty. If there are already some changes in overleaf and you want to merge unrelated histories, there 
+are better ways. Since, for this post, we are assuming that the overleaf is new, we won’t worry ourselves with it :)&lt;/p&gt;
+
+&lt;p&gt;Once the above commands are done, overleaf will now have a working copy that is on your local computer. Now, there are &lt;em&gt;three&lt;/em&gt; copies of the same file, one on dropbox, one in your local computer
+and one in overleaf. Assuming that people made edits on &lt;em&gt;both&lt;/em&gt; dropbox and overleaf, while you made edits on your local copy, here are the series of git commands to sync them all.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/myWorkingPaper
+git commit -a -m &quot;Commit message&quot;
+git pull overleaf master #Retrieve from the overleaf copy
+git pull origin master #Retrieve from the dropbox copy
+#Fix merge issues, if any
+git push origin master #push changes to the dropbox copy
+git push overleaf master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This setup is so organized that it serves everyone. Let me know if you have found better alternatives.&lt;/p&gt;
+
+&lt;p&gt;P.S.: You need to keep gitobox running in the background. Everytime you restart a computer, make sure to first start gitobox (Using command in line 4) and then start working!&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 10 Jul 2017 00:00:00 +0530</pubDate>
+        <link>http://localhost:4443/research/2017/07/10/collaborating-with-latex-and-git/</link>
+        <guid isPermaLink="true">http://localhost:4443/research/2017/07/10/collaborating-with-latex-and-git/</guid>
+      </item>
+    
+      <item>
         <title>A Trekking Expedition through the Chandrakhani Pass Part 2</title>
         <description>&lt;p&gt;This post is the continuation of the Part 1 of the experience. To read Part 1 please click &lt;a href=&quot;http://karthikabinav.wordpress.com/2014/06/06/chandrakhani-pass-1/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
