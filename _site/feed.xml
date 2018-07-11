@@ -3,8 +3,23 @@
   <channel>
     <title>Blog</title>
     <description></description>
-    <link>http://localhost:4443/</link>
-    <atom:link href="http://localhost:4443/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/blog/</link>
+    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Notes on Pleasure</title>
+        <description>&lt;p&gt;In this post we will summarize the main contents in the book on science on Pleasure.&lt;/p&gt;
+
+&lt;h2 id=&quot;preface&quot;&gt;Preface&lt;/h2&gt;
+
+&lt;p&gt;This book is about the science of why humans like pleasure. Does it come from evolutionary principles? What about various things like art, sex, food, pornography, etc.&lt;/p&gt;
+
+&lt;h1 id=&quot;chapter-1&quot;&gt;Chapter 1&lt;/h1&gt;
+</description>
+        <pubDate>Fri, 06 Jul 2018 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/blog/book%20notes/2018/07/06/Pleasure/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/book%20notes/2018/07/06/Pleasure/</guid>
+      </item>
     
       <item>
         <title>Collaborating with Latex and git</title>
@@ -53,7 +68,7 @@ git init
     &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;Finally, “clone” a copy of this to get your local working copy.
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone myWorkingPaper localDropbox
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone localDropbox myWorkingPaper
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
   &lt;/li&gt;
@@ -97,9 +112,9 @@ git push overleaf master
 &lt;p&gt;P.S.: You need to keep gitobox running in the background. Everytime you restart a computer, make sure to first start gitobox (Using command in line 4) and then start working!&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 10 Jul 2017 00:00:00 +0530</pubDate>
-        <link>http://localhost:4443/research/2017/07/10/collaborating-with-latex-and-git/</link>
-        <guid isPermaLink="true">http://localhost:4443/research/2017/07/10/collaborating-with-latex-and-git/</guid>
+        <pubDate>Mon, 10 Jul 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/blog/research/2017/07/10/collaborating-with-latex-and-git/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/research/2017/07/10/collaborating-with-latex-and-git/</guid>
       </item>
     
       <item>
@@ -172,8 +187,8 @@ git push overleaf master
 
 </description>
         <pubDate>Sun, 08 Jun 2014 10:52:03 +0000</pubDate>
-        <link>http://localhost:4443/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/</link>
-        <guid isPermaLink="true">http://localhost:4443/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/</guid>
+        <link>http://localhost:4000/blog/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/</guid>
       </item>
     
       <item>
@@ -249,8 +264,8 @@ git push overleaf master
 &lt;p&gt;The description of the remaining days will be continued in the next part of this post. At this point, I would like to thank Abhishek, Surya, Sachin and Vishal for the photographs used in this post.&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Jun 2014 14:34:53 +0000</pubDate>
-        <link>http://localhost:4443/misc/2014/06/06/chandrakhani-pass-1/</link>
-        <guid isPermaLink="true">http://localhost:4443/misc/2014/06/06/chandrakhani-pass-1/</guid>
+        <link>http://localhost:4000/blog/misc/2014/06/06/chandrakhani-pass-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/misc/2014/06/06/chandrakhani-pass-1/</guid>
       </item>
     
   </channel>

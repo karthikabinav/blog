@@ -53,7 +53,7 @@ gitobox ~/Dropbox/MyPaper ~/localDropbox/.git
 ```
 5. Finally, "clone" a copy of this to get your local working copy.
 ```
-git clone myWorkingPaper localDropbox
+git clone localDropbox myWorkingPaper
 ```
 
 The above steps completes the steps for working with dropbox and git. You can make all your local changes in myWorkingPaper, while keeping gitobox running (line 4).
