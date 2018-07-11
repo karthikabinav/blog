@@ -3,7 +3,7 @@ author: karthikabinav
 comments: true
 date: 2018-07-06
 layout: post
-published: false
+published: true
 slug: Thinking Fast and Slow
 title: Notes on Thinking Fast and Slow
 categories:
