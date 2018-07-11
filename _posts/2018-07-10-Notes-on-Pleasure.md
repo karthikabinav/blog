@@ -3,7 +3,7 @@ author: karthikabinav
 comments: true
 date: 2018-07-06
 layout: post
-published: true
+published: false
 slug: Pleasure
 title: Notes on Pleasure
 categories:
