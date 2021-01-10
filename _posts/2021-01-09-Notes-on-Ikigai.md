@@ -2,7 +2,6 @@
 author: karthikabinav
 comments: true
 date: 2021-01-09
-layout: post
 published: true
 slug: Ikigai - The Japanese Secret to a Long and Happy Life
 title: Notes on Ikigai
@@ -12,8 +11,6 @@ tags:
 - Social Science
 - Behaviour
 ---
-
-# Ten rules of Ikigai
 
 I recently listened to this audio book "Ikigai: The Japanese Secret to a Long and Happy Life" by Hector Garcia and Francesc Miralles. This book studies the people who live in the northern part of Japan who are known to have long life-spans. Summarizing the learnings, these are the ten rules to find Ikigai. 
 
