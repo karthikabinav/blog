@@ -7,18 +7,88 @@
     <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Notes on Pleasure</title>
-        <description>&lt;p&gt;In this post we will summarize the main contents in the book on science on Pleasure.&lt;/p&gt;
+        <title></title>
+        <description>&lt;h1 id=&quot;ten-rules-of-ikigai&quot;&gt;Ten rules of Ikigai&lt;/h1&gt;
 
-&lt;h2 id=&quot;preface&quot;&gt;Preface&lt;/h2&gt;
+&lt;p&gt;I recently listened to this audio book “Ikigai: The Japanese Secret to a Long and Happy Life” by Hector Garcia and Francesc Miralles. This book studies the people who live in the northern part of Japan who are known to have long life-spans. Summarizing the learnings, these are the ten rules to find Ikigai.&lt;/p&gt;
 
-&lt;p&gt;This book is about the science of why humans like pleasure. Does it come from evolutionary principles? What about various things like art, sex, food, pornography, etc.&lt;/p&gt;
-
-&lt;h1 id=&quot;chapter-1&quot;&gt;Chapter 1&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Stay active and don’t retire: Essentially find something to do that energizes the mind and body. Continue to do this that brings joy, provides value to others  even after the official professional activity has ended.&lt;/li&gt;
+  &lt;li&gt;Take it slow: Always being in a constant rush decreases the quality of life. The quote from this book is “Walk slowly and you will go far”.&lt;/li&gt;
+  &lt;li&gt;Don’t fill your stomach fully: Essentially eat meals and stop when you are roughly about 80% full. Stick to controlled calorific inputs and try to fast at least once a week to reset the digestive system.&lt;/li&gt;
+  &lt;li&gt;Surround yourself with good friends: They are good source for sharing good stories, getting advice and having fun.&lt;/li&gt;
+  &lt;li&gt;Get in shape: The recommendation is to have moderate activity everyday to keep the physical body in shape. This could include taking walks, going on bike rides etc. Also have exercise where the arm is lifted above the level of the ear.&lt;/li&gt;
+  &lt;li&gt;Smile: This refers to always smiling at people, hardships and any situation that life throws at us. A cheerful attitude will attract good friends (#4).&lt;/li&gt;
+  &lt;li&gt;Reconnect with nature: Living in large cities, we lose touch with nature. Try to go to places such as the woods, trails etc to interact with nature.&lt;/li&gt;
+  &lt;li&gt;Give thanks: Giving gratitude to people, ancestors, to the nature and the food we eat. This helps us maintain a more cheerful attitude (#6).&lt;/li&gt;
+  &lt;li&gt;Live in the moment: Do not be overly worried about the future or brood over the past. As an example, a surfer’s attention is always at the wave he is riding and that point does not worry about anything else.&lt;/li&gt;
+  &lt;li&gt;Follow your ikigai: There is a passion inside you and follow that till the very end. If you haven’t found it yet, your mission is to find the ikigai and then follow it.&lt;/li&gt;
+&lt;/ol&gt;
 </description>
-        <pubDate>Fri, 06 Jul 2018 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/blog/book%20notes/2018/07/06/Pleasure/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/book%20notes/2018/07/06/Pleasure/</guid>
+        <pubDate>Sat, 09 Jan 2021 23:19:57 -0800</pubDate>
+        <link>http://localhost:4000/blog/2021/01/09/2021-01-09-Notes-on-Ikigai/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/01/09/2021-01-09-Notes-on-Ikigai/</guid>
+      </item>
+    
+      <item>
+        <title>Notes on Thinking Fast and Slow</title>
+        <description>&lt;p&gt;This post describes a short summary of several central concepts in this book. I only write down the centeral concepts and a one line description of each of these.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Priming Effect - Seeing/recollecting a particular event makes System 1 jump to conclusion about it. System 2 is responsible for refuting/disbelieving it&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cognitive Bias - Repetition makes System 1 believe that something is true. System 2 is lazy&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;System 2 has limited capacity and is by design lazy. Keeping system 2 busy will make system 1 believe in absurd things and gullible. Ex. Tired people believe false commercials over people who are mentally active.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Halo Effect : Initial Observations have more weightage than later observations about a person or thing.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-What you see is all there is: System 1 constructs a coherent story out of the available information and System 2 believes in it. In other words, a coherent story is more important than a complete story.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mental Shotgun: Our System 2 computes far more than that is actually necessary.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Anchoring Effect: Occurs, when someone considers a particular value for a quantity before estimating it. Hence, when the estimation is actually done, it is very close to the considered value. Anchoring effect is few of the psychological phenomenon, which can be measured as against to just experiments.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Information availability bias: Customers who were asked to state the benefits of buying a car, found the car less attractive after listing it down as opposed to people who didn’t explicitly list them. Hence, recalling certain information induces a psychological influence on the opinion of that item&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-Availability Cascade: Our mind either totally neglects a risk or gives them far too much weight. Ex: A parent waiting for her teenage daughter to come back home from a late night party.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Less is More phenomenon: Consider a set of dinnerware A and another set of dinner B which has same items as A + some broken items. When both choices are shown to customers, they rate B more than A. But only when one of them is shown, the set A was valued more than set B. Because, the broken items somehow brought the average down and people think in terms of average when they don’t have anything to compare.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Narrative Fallacies: When a story is told, the mind doesn’t think about all the details that are not mentioned. It tries to construct a coherent story out of the things told. Ex: Is the story of google making a big success.     &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-Outcome/Hindsight Bias: The value of any particular decision is judged based on the outcome rather than the soundness of the process itself.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Effect of Intuition: If the situation is regular and always same, e.g. Chess then expert intuition can be learnt with lots of practice. In other cases, there is no such thing as expert intuition. The prediction of experts is as good as a random prediction. e.g. Stock markets&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Loss Aversion: Consider a new york cab driver who has a daily fixed target. On rainy days, once he reaches the target he slacks off and goes home and on other days he works twice as much to meet the daily target. A economically rational person would make more on rainy days so that he can “buy” the target of the other days. But Loss aversion is at play and hence he doesn’t behave economically rationally.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 06 Jul 2018 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/blog/book%20notes/2018/07/06/Thinking-Fast-and-Slow/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/book%20notes/2018/07/06/Thinking-Fast-and-Slow/</guid>
       </item>
     
       <item>
@@ -112,7 +182,7 @@ git push overleaf master
 &lt;p&gt;P.S.: You need to keep gitobox running in the background. Everytime you restart a computer, make sure to first start gitobox (Using command in line 4) and then start working!&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 10 Jul 2017 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 10 Jul 2017 00:00:00 -0700</pubDate>
         <link>http://localhost:4000/blog/research/2017/07/10/collaborating-with-latex-and-git/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/research/2017/07/10/collaborating-with-latex-and-git/</guid>
       </item>

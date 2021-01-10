@@ -4,7 +4,7 @@ comments: true
 date: 2021-01-09
 layout: post
 published: true
-slug: Ikigai: The Japanese Secret to a Long and Happy Life
+slug: Ikigai - The Japanese Secret to a Long and Happy Life
 title: Notes on Ikigai
 categories:
 - Book Notes

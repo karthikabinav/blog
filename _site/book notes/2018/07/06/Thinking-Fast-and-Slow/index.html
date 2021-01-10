@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Notes on Thinking Fast and Slow &#8211; Blog</title>
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdn.mathjax.org">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="robots" content="all">
+    <meta name="author" content="Karthik A Sankararaman">
+    <meta name="keywords" content="Book Notes">
+    <link rel="canonical" href="http://localhost:4000/blog/book%20notes/2018/07/06/Thinking-Fast-and-Slow/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Blog" href="/blog/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/pixyll.css?202101092319" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+                    }
+                      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Notes on Thinking Fast and Slow">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/">
+    <meta property="og:site_name" content="Blog">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@karthikabinav" />
+    
+    <meta name="twitter:title" content="Notes on Thinking Fast and Slow" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:url" content="http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-53548208-1', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+</head>
+
+<body class="site animated fade-in-down">
+  
+	
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://localhost:4000/blog" class="site-title">Blog</a>
+      <nav class="site-nav">
+        
+    
+
+    
+    <a href="/blog/about/">About</a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/karthikabinav"></a>
+    
+    
+    
+    <a class="fa fa-rss" href="/blog/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/karthikabinav"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:karthikabinavs@gmail.com"></a>
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Notes on Thinking Fast and Slow</h1>
+  <span class="post-meta">Jul 6, 2018</span><br>
+  
+  <span class="post-meta small">
+  
+    3 minute read
+  
+  </span>
+</div>
+
+<article class="post-content">
+  <p>This post describes a short summary of several central concepts in this book. I only write down the centeral concepts and a one line description of each of these.</p>
+
+<ul>
+  <li>
+    <p>Priming Effect - Seeing/recollecting a particular event makes System 1 jump to conclusion about it. System 2 is responsible for refuting/disbelieving it</p>
+  </li>
+  <li>
+    <p>Cognitive Bias - Repetition makes System 1 believe that something is true. System 2 is lazy</p>
+  </li>
+  <li>
+    <p>System 2 has limited capacity and is by design lazy. Keeping system 2 busy will make system 1 believe in absurd things and gullible. Ex. Tired people believe false commercials over people who are mentally active.</p>
+  </li>
+  <li>
+    <p>Halo Effect : Initial Observations have more weightage than later observations about a person or thing.</p>
+  </li>
+</ul>
+
+<p>-What you see is all there is: System 1 constructs a coherent story out of the available information and System 2 believes in it. In other words, a coherent story is more important than a complete story.</p>
+
+<ul>
+  <li>
+    <p>Mental Shotgun: Our System 2 computes far more than that is actually necessary.</p>
+  </li>
+  <li>
+    <p>Anchoring Effect: Occurs, when someone considers a particular value for a quantity before estimating it. Hence, when the estimation is actually done, it is very close to the considered value. Anchoring effect is few of the psychological phenomenon, which can be measured as against to just experiments.</p>
+  </li>
+  <li>
+    <p>Information availability bias: Customers who were asked to state the benefits of buying a car, found the car less attractive after listing it down as opposed to people who didn’t explicitly list them. Hence, recalling certain information induces a psychological influence on the opinion of that item</p>
+  </li>
+</ul>
+
+<p>-Availability Cascade: Our mind either totally neglects a risk or gives them far too much weight. Ex: A parent waiting for her teenage daughter to come back home from a late night party.</p>
+
+<ul>
+  <li>
+    <p>Less is More phenomenon: Consider a set of dinnerware A and another set of dinner B which has same items as A + some broken items. When both choices are shown to customers, they rate B more than A. But only when one of them is shown, the set A was valued more than set B. Because, the broken items somehow brought the average down and people think in terms of average when they don’t have anything to compare.</p>
+  </li>
+  <li>
+    <p>Narrative Fallacies: When a story is told, the mind doesn’t think about all the details that are not mentioned. It tries to construct a coherent story out of the things told. Ex: Is the story of google making a big success.     </p>
+  </li>
+</ul>
+
+<p>-Outcome/Hindsight Bias: The value of any particular decision is judged based on the outcome rather than the soundness of the process itself.</p>
+
+<ul>
+  <li>
+    <p>Effect of Intuition: If the situation is regular and always same, e.g. Chess then expert intuition can be learnt with lots of practice. In other cases, there is no such thing as expert intuition. The prediction of experts is as good as a random prediction. e.g. Stock markets</p>
+  </li>
+  <li>
+    <p>Loss Aversion: Consider a new york cab driver who has a daily fixed target. On rainy days, once he reaches the target he slacks off and goes home and on other days he works twice as much to meet the daily target. A economically rational person would make more on rainy days so that he can “buy” the target of the other days. But Loss aversion is at play and hence he doesn’t behave economically rationally.</p>
+  </li>
+</ul>
+
+
+</article>
+
+
+  <div class="share-page">
+  
+
+  <div class="share-links">
+    
+      <a class="fa fa-facebook" href="https://facebook.com/sharer.php?u=http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+    
+
+    
+      <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text=Notes on Thinking Fast and Slow&url=http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+    
+
+    
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/" rel="nofollow" target="_blank" title="Share on Google+"></a>
+    
+
+    
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?url=http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/&title=Notes on Thinking Fast and Slow" rel="nofollow" target="_blank" title="Share on LinkedIn"></a>
+    
+
+    
+
+    
+
+    
+      <a class="fa fa-reddit" href="http://reddit.com/submit?url=http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/&title=Notes on Thinking Fast and Slow" rel="nofollow" target="_blank" title="Share on Reddit"></a>
+    
+
+    
+
+    
+      <a class="fa fa-hacker-news" onclick="parent.postMessage('submit','*')" href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/book%20notes/2018/07/06/Thinking-Fast-and-Slow/&t=Notes on Thinking Fast and Slow" rel="nofollow" target="_blank" title="Share on Hacker News"></a>
+    
+  </div>
+</div>
+
+
+
+
+  <div class="py2 post-footer">
+  
+</div>
+
+
+
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname  = 'karthikabinavs';
+    var disqus_identifier = '/book%20notes/2018/07/06/Thinking Fast and Slow';
+    var disqus_title      = 'Notes on Thinking Fast and Slow';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/blog/2021/01/09/2021-01-09-Notes-on-Ikigai/" class="post-link">
+        <h4 class="post-title"></h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/blog/research/2017/07/10/collaborating-with-latex-and-git/" class="post-link">
+        <h4 class="post-title">Collaborating with Latex and git</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/blog/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/" class="post-link">
+        <h4 class="post-title">A Trekking Expedition through the Chandrakhani Pass Part 2</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/blog/misc/2014/06/06/chandrakhani-pass-1/" class="post-link">
+        <h4 class="post-title">A Trekking Expedition through the Chandrakhani Pass Part 1</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="center">
+  <div class="measure">
+    <small>
+      Theme available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+    </small>
+  </div>
+</footer>
+<!-- AnchorJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.0.0/anchor.min.js"></script>
+<script>
+    anchors.options.visible = 'always';
+    anchors.add('article h2, article h3, article h4, article h5, article h6');
+</script>
+
+</body>
+</html>
