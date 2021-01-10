@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog</title>
+    <description></description>
+    <link>http://localhost:4000/blog/</link>
+    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Notes on Pleasure</title>
+        <description>&lt;p&gt;In this post we will summarize the main contents in the book on science on Pleasure.&lt;/p&gt;
+
+&lt;h2 id=&quot;preface&quot;&gt;Preface&lt;/h2&gt;
+
+&lt;p&gt;This book is about the science of why humans like pleasure. Does it come from evolutionary principles? What about various things like art, sex, food, pornography, etc.&lt;/p&gt;
+
+&lt;h1 id=&quot;chapter-1&quot;&gt;Chapter 1&lt;/h1&gt;
+</description>
+        <pubDate>Fri, 06 Jul 2018 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/blog/book%20notes/2018/07/06/Pleasure/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/book%20notes/2018/07/06/Pleasure/</guid>
+      </item>
+    
+      <item>
+        <title>Collaborating with Latex and git</title>
+        <description>&lt;p&gt;In this post, I will describe a setup I recently settled upon, which makes writing papers when collaborating easy. This setup is especially
+useful, when one or more of the collaborators aren’t tech-savvy and can’t use git.&lt;/p&gt;
+
+&lt;p&gt;In our group, we have been using Dropbox as the default sharing service to keep common latex files. It is convenient and we don’t have to exchange
+files over emails. We usually face the following two issues:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Dropbox does not have a version control and we usually resort to creating folders which looks like &lt;em&gt;backup-mm-dd&lt;/em&gt;, &lt;em&gt;old_copy_blah&lt;/em&gt;, etc. Not once have these
+backups been useful. In fact, more often than not, it only creates more confusion.&lt;/li&gt;
+  &lt;li&gt;Inevitably, we end up using &lt;em&gt;fancy&lt;/em&gt; Latex packages and one or more of the co-authors complain they are unable to compile it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Solution to (1) is using git. However, git comes with a &lt;em&gt;tiny&lt;/em&gt; bit of learning curve which most people get intimidated by. In principle, we just need one of the 
+collaborators to be comfortable with using git (In this post, we are going to assume you are that person).
+Solution to (2) is to use an online latex compiler such as sharelatex, overleaf, etc. In an ideal world, you would want &lt;em&gt;one&lt;/em&gt; solution
+which solves the issue of cloud storage, version control and online compilation of Latex. That ideal world is expensive (i.e., paid versions of sharelatex, overleaf support all three simultaneously).
+Now I will describe the work-around we use which is &lt;strong&gt;free&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We use Dropbox for cloud storage, overleaf for online latex compilation and git for version control. The procedure is described assuming a Mac operating system. The setup is as follows.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create a folder in Dropbox containing the main files. For this example we will call the folder MyPaper, with the following path
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Dropbox/MyPaper
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Let us setup a &lt;em&gt;local&lt;/em&gt; version of this folder. I am going to name the folder “localDropbox” and the corresponding path to be
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/localDropbox
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We will first install this awesome software &lt;a href=&quot;https://github.com/remram44/gitobox&quot;&gt;Gitobox&lt;/a&gt;. If you have &lt;a href=&quot;https://pip.pypa.io/en/stable/installing/&quot;&gt;pip&lt;/a&gt; installed, you can simply run
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install gitobox
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Now go into the previously created folder and initialize an empty git repository.&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/localDropbox
+git init
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fire up gitobox, which continuously “monitors” changes in your dropbox folder. Run the following command
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gitobox ~/Dropbox/MyPaper ~/localDropbox/.git
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Finally, “clone” a copy of this to get your local working copy.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone localDropbox myWorkingPaper
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The above steps completes the steps for working with dropbox and git. You can make all your local changes in myWorkingPaper, while keeping gitobox running (line 4).
+Once you are ready to commit, follow the usual commands&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -a -m &quot;Your commit message&quot;
+git pull origin master
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will commit your changes to the localDropbox git folder. The running gitobox will &lt;em&gt;automatically&lt;/em&gt; take care of syncing this with the dropbox.&lt;/p&gt;
+
+&lt;p&gt;The second thing I will now describe is to sync it with an online editor (we predominantly use overleaf since it allows access via git). For this post, let the git url be
+&lt;a href=&quot;https://www.overleaf.com/abcdefghij&quot;&gt;https://www.overleaf.com/abcdefghij&lt;/a&gt;. First go into the myWorkingPaper folder and perform the following command. This command essentially adds overleaf as a remote and &lt;em&gt;forces&lt;/em&gt; the 
+history to be the same as the one maintained locally. This step is needed since overleaf creates a default initial commit.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add overleaf https://www.overleaf.com/abcdefghij
+git push --force overleaf master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A word of caution, &lt;em&gt;force&lt;/em&gt; push only if the document in overleaf is empty. If there are already some changes in overleaf and you want to merge unrelated histories, there 
+are better ways. Since, for this post, we are assuming that the overleaf is new, we won’t worry ourselves with it :)&lt;/p&gt;
+
+&lt;p&gt;Once the above commands are done, overleaf will now have a working copy that is on your local computer. Now, there are &lt;em&gt;three&lt;/em&gt; copies of the same file, one on dropbox, one in your local computer
+and one in overleaf. Assuming that people made edits on &lt;em&gt;both&lt;/em&gt; dropbox and overleaf, while you made edits on your local copy, here are the series of git commands to sync them all.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/myWorkingPaper
+git commit -a -m &quot;Commit message&quot;
+git pull overleaf master #Retrieve from the overleaf copy
+git pull origin master #Retrieve from the dropbox copy
+#Fix merge issues, if any
+git push origin master #push changes to the dropbox copy
+git push overleaf master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This setup is so organized that it serves everyone. Let me know if you have found better alternatives.&lt;/p&gt;
+
+&lt;p&gt;P.S.: You need to keep gitobox running in the background. Everytime you restart a computer, make sure to first start gitobox (Using command in line 4) and then start working!&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 10 Jul 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/blog/research/2017/07/10/collaborating-with-latex-and-git/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/research/2017/07/10/collaborating-with-latex-and-git/</guid>
+      </item>
+    
+      <item>
+        <title>A Trekking Expedition through the Chandrakhani Pass Part 2</title>
+        <description>&lt;p&gt;This post is the continuation of the Part 1 of the experience. To read Part 1 please click &lt;a href=&quot;http://karthikabinav.wordpress.com/2014/06/06/chandrakhani-pass-1/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 5- Behali(8300 ft) to Waching(9300 ft)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This was probably the easiest stretch of the trek. We had an estimated time of 3 hours to cover about 5 kms. We had a couple of problems before starting off from Behali. Firstly, one of the participant Ananth had his shoe sole come off. In spite of inquiring around, we couldn’t find an extra pair of shoes for him. So, he just performed a temporary hack by using some glue and rope. The second issue was another participant Prateek fell ill and had high fever. He consumed a lot of paracetamol to help him trek for the remaining journey. After we left Behali, we got to see some glacial left overs on the way. This was our first encounter with ice. After trekking for about two hours upwards, we reached a flat land where we halted for lunch. We were running well ahead of schedule and hence, decided to take a break of atleast 2.5 hours. One particular sport unites everyone in India. And that is the game of cricket. We managed to get a bat and a ball from a local there. The flat land also had a stretch of grass removed. Using that as the pitch, we started playing cricket there. For most of us, it was the highest point at which we have played this game.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/cricket.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/cricket.jpg?w=300&quot; alt=&quot;cricket&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After playing about 5-6 matches of gully cricket, we were quite satisfied and hence, got the enthusiasm to move ahead. After about another half hour of trek upwards, we reached the much awaited camp site at Waching.&lt;/p&gt;
+
+&lt;p&gt;This site was again on a completely sloping land. This was also the first campsite where we had no pre-built toilets. Although women still had a pre-built toilet spot, for men it was answering nature’s call in nature’s style. Since, the entire area was on sloping lands, one had to perform a mini-trek to even find a good spot to answer the call. This added to the beauty of this campsite. The other distinctive feature of this campsite was that, at this spot we were completely surrounded by snow-capped mountains on all the sides. A view outside the tent looked like the picture below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/waching.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/waching.jpg?w=300&quot; alt=&quot;waching&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This naturally meant that the nights became extremely cold. One needed to wear gloves and scarf to keep one completely warm. Since, we had an extremely easy trek for the day, everyone had full energy to perform camp fire. We all got together and sang a lot of famous hindi songs. This was also the point where a bit of thrill started creeping in. We were told that the next two days were the most tiring parts of the trek. Also, it would be the days where we would be encountering snow and hail storm. With a hope of enjoying ourselves fully, we went to bed that day night.&lt;/p&gt;
+
+&lt;p&gt;The next day morning, Ananth found an extra pair of boots in the camp leader’s tent. With his permission, he took that and now all the equipment related issues seemed to be resolved. But, illness never seemed to stop spreading. The next morning, another girl Preeti also fell ill with high fever. Hence, two people in the group had to do the tougher parts of the trek with fever and cold. But, the motivation in the group was strong that, they eventually completed the trek without giving up.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 6- Waching(9300 ft) to Nagroni(10,000 ft)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As we were told, moving from Waching to Nagroni was the start of the tougher parts of the trek. In the words of Mr. Chauhan, it was the “semi-finals” of our trek. The hype created by him was aptly justified since major part of the day’s trek was climbing steep slopes. This drained out our energy very quickly. Also, at some spots in the the journey there was ice patches. This was exciting for most of us since that was what we had been hoping throughout the trek. Fortunately for us, the weather had been good so far in the trek. Apparently, for some groups which came before us, the waching campsite was completely immersed in snow and the entire path from there on was a path on snow. Thankfully for us, we just encountered patches of ice, while the majority of the path was grass and sand.&lt;/p&gt;
+
+&lt;p&gt;It took us a complete 6 hours to finish about 3.5 km of trek for the day. This was mainly due to the steep slope on which we were making the climb. After huffing and puffing, by about 4 PM in the afternoon, we reached the highest campsite of our trek - Nagroni campsite. This campsite was situated at about 10,000 ft and was completely surrounded by majestic Himalayan ranges. The view from this campsite was picturesque.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/nagroni.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/nagroni.jpg?w=300&quot; alt=&quot;Nagroni&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The sheer beauty of the scenery around and the sight of snow-capped mountains nearby pumped up the enthusiasm in all of us. We had an early dinner and an early camp fire, since we had to leave early the next day morning. We were asked to get up by 3 AM and be ready to leave for the next day’s trek by 5 AM. So, by about 7:30 PM we winded up our camp fire(which turned out to be a game of dumb charades) and went into our tents. Almost everyone was waiting for the next day to come. It was the day when we would cross the Chandrakhani pass. And in words of Mr. Chauhan, it was our “finals”.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 7 - Nagroni(10,000ft) through the Chandrakhani Pass(12,500 ft) to Nau Tapru(9700 ft)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We promptly woke up by about 3AM in the morning. The moment I walked out of the tent and saw the sky, I saw a beautiful white ring cut across the sky. It was the Milky Way galaxy which was clearly visible in the clear skies of Nagroni camp. The early morning wake was suddenly worth it. With due credits for the photo to Mr. &lt;a href=&quot;https://www.facebook.com/vijaikanth09&quot;&gt;Vijai Kanth Panthayil&lt;/a&gt; from CP-29, the sky looked something similar to this&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/milky_way.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/milky_way.jpg?w=200&quot; alt=&quot;milky_way&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;By about 5:30 AM all of us assembled, performed the customary head count and left for the day’s trek. The day’s schedule was an hectic one. We were to trek for about 17km through snow and it was estimated to take us till evening 6 PM to complete the trek. With high hopes and immense motivation we started off our journey towards the Chandrakhani pass. Within about half hour of the journey, it started raining heavily making the rocks and the path quite slippery. Soon about an hour later, we hit the first fully snow covered path in the journey. From there on, it was just snow-snow everywhere.&lt;/p&gt;
+
+&lt;p&gt;The paths turned to be tricky and adverse. With rain continuously pouring down, it made the paths more and more slippery. At some spots, the ice just caved in. In one of the points, I ended up going knee down into ice, since the layer just caved in. This was an awesome experience. The road winded and and upward slope was quite steep. With help from each other, we slowly made our journey upwards.&lt;/p&gt;
+
+&lt;p&gt;At one point along this path, there was slippery mud and snow through which we had to make our trek. I had a momentary slip at this point and by far that was the most scariest moment. With the support of a nearby rock, I gained back my posture and I continued the trek ahead. At this point, the rain had already taken the form of snow and hail-storm. It was the first time I had experience soft pieces of ice falling down on my shoulders. After about another half hour of steep ascent we reached the entrance of Chandrakhani pass.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/enroute_chandrakhani.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/enroute_chandrakhani.jpg?w=300&quot; alt=&quot;Enroute_Chandrakhani&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Yet another thrilling experience was awaiting us here. There was strong cross winds blowing across since we had reached the top-most point. There was a narrow path of snow on the sloping edge of the mountain. We had the support of a rope for the first 30m or so, beyond which one had to use hands to catch the sloping side of the mountain and walk ahead. The non-mountain side of the path sloped down towards foothills at about 6000ft. Hence, a small slip meant we would go rolling down the slope. This was the moment where we had immense adrenaline rush. We slowly clamped onto the ice with one hand and moved ahead on the narrow path of ice. We had to make a complete circle around the Chandrakhani pass in this manner. The scenes at this point were something which is not describable in any amount of words. And since the trek at this point was quite hard, it was almost impossible to take a picture of this spot. The 10 or so minutes crossing this path was a feeling which made the 5 days of climb, worth the effort.&lt;/p&gt;
+
+&lt;p&gt;Since one had to touch snow continuously for about ten minutes, lack of gloves only meant one thing - frost bite. One of the group members Irfan, unfortunately didn’t wear enough protective clothing while crossing the path. Midway through, his hand and legs went numb and he started getting symptoms of Hypothermia. Thankfully, one of the Sherpa noticed it and immediately carried him to the nearest flat spot. He then gave first-aid treatment in the form of transferring body heat. And later, took him downwards towards base camp where the temperatures were comparatively higher. This incident momentarily disturbed some of us since we had never seen such a body condition before.&lt;/p&gt;
+
+&lt;p&gt;Once past the pass, the journey now was downhill. We had to walk long distances on ice on flat land and get to an appropriate spot where we could do ice sliding. Ice sliding is a method to descend through ice mountains at a quick pace. It is extremely fun activity and the best part is that doing it wrong will not cause any kind of injury. We walked for about 2 km on ice before we halted for lunch. After lunch, we experienced the longest slide of the trek. This was everyone’s first slide and almost everybody made a mistake. Hence, the postures the body went into while sliding and while halting were extremely funny and we all had a good laugh seeing others slide. The first slide was the biggest of them all. In the photograph below, we started the slide from a part above the topmost visible point and slid down all the way till where people are standing.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/bigslide.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/bigslide.jpg?w=300&quot; alt=&quot;BigSlide&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ice sliding re-energized everyone again. Till before this, almost everyone was tired of the ice. The snow started getting into my boots and hence, made my socks wet. I had three pairs of socks on me and the snow managed to get all of them wet. After about 4 such slides at various points, and long walks through flat ice, we could see a canteen in our sight. The frustrating part about walking on ice was that every time you walk normally as you would walk on normal land, you would slip and fall. You needed to groove your feet strongly in ice before taking the next step. Hence, it consumed almost thrice as much energy as walking on normal land. And all the slipping down and falling started to get frustrating after a certain point. It was like a new-born baby learning to walk. Once, we reached the canteen, we were invited with hot maggi, omlette and tea. It was extremely comforting and soothing for the body. We still had about 2 hours of trek remaining for the day from that point. Hence, the break was extremely essential.&lt;/p&gt;
+
+&lt;p&gt;After the canteen, we continued our journey ahead. This time there were patches of normal land in between snow and this gave indication of descent. We got the opportunity to perform 2 more ice sliding. Since, we were now accustomed to this act, the sherpas made us go in groups of three to speed things up. By about 6:30, we reached our campsite for the night, the Nau Tapru campsite. After walking through the ice for the entire day, this camp felt like heaven. There was no ice and we were feeling slightly warm! Not a single person had any energy left in him to conduct camp fire. We quickly had our dinner, put our clothes to dry and went off to sleep.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 8 - Nau Tapru(9700ft) to SeoBagh Base Camp&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This was the last day of the trek and we had already achieved the main purpose - going through the Chandrakhani Pass. It was now time for descending back to base camp. This happened in two phases- First descend on foot till Naggar, HP. And then take a car/bus from there to the base camp near Kullu, HP. The first phase was not as hard the previous day’s trek, but challenging nonetheless. The descent was extremely steep. The path was a mixture of grassland and rocks which made the descent comfortable on the legs. But, the sheer distance and tiredness from the entire trek so far made all of us just want to get back to flat land. I was tired of standing on sloping terrain and wanted to give some comfort to my knees and back by walking on plain lands. The descent by foot was for about 3.5 hours. We had frequent breaks in between. We kept chatting about random stuff and cracking jokes along the way. The one good thing about this trek was that we made a lot of good friends during the process. Everyone shared the same frustration and pain and this helped in getting people closer. The camp fires every night also bridged the gap between us and we were now quite close to each other.&lt;/p&gt;
+
+&lt;p&gt;After about 3.5 hours, we came in sight with civilized life. We hired cars to SeoBagh and in batches of about 10 left towards the camp. The journey was for about 2 hours and when we finally reached the spot we were familiar with we screamed our guts out. We had finally completed the trek successfully and were back to place where we had electricity and sheltered toilets !&lt;/p&gt;
+
+&lt;p&gt;During the night’s camp fire we were invited individually and were given a certificate of completion by Mr. Chauhan. Our group of 19 had booked bus for 10PM the same night. So soon after camp fire, we took one last group photo. We then exchanged goodbyes and left the base camp towards Delhi. The trek had helped us make a lot of new friends and bidding good bye so soon seemed a difficult task. Since we were among the first ones to leave, the remaining people gave us a grand send off which made us miss the place even more !&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/final_group_photo.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/final_group_photo.jpg?w=300&quot; alt=&quot;Final_Group_Photo&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I would like to thank Abhishek, Sachin, Surya and Vishal for the photographs used in this post. I would also like to thank Mr. &lt;a href=&quot;https://www.facebook.com/vijaikanth09&quot;&gt;Vijai Kanth Panthayil&lt;/a&gt; from group CP-29 for the special photograph of the Milky Galaxy.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 08 Jun 2014 10:52:03 +0000</pubDate>
+        <link>http://localhost:4000/blog/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/misc/2014/06/08/a-trekking-expedition-through-the-chandrakhani-pass-part-2-6/</guid>
+      </item>
+    
+      <item>
+        <title>A Trekking Expedition through the Chandrakhani Pass Part 1</title>
+        <description>&lt;p&gt;This is my first non-technical post on my blog. I going to describe my experiences of the trek through the Chandrakhani pass. This trek was organised by the &lt;a href=&quot;yhaindia.org&quot;&gt;Youth Hostels Association of India&lt;/a&gt;. The post is divided into two parts - The experiences of the first few days in the first post and the experiences of the remaining days in the second post.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/blog_cover.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/blog_cover.jpg?w=225&quot; alt=&quot;chandrakhani&quot; /&gt;     &lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/group_picture.jpg?w=300&quot; alt=&quot;Group Photo&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We were a group of 19 people from IIT Madras who set off on our last group trip before graduating from college. The 7 days that followed was filled with fun, adventure and excitement. I will describe a day-by-day account of the entire trek in this post.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 0 - Reporting Day&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This day was reserved for the participants to arrive at the Seobagh Base Camp near Kullu. This base camp, at any given time, housed 5 groups of trekkers. This is where the orientation and the initial activities took place. This place is about 4 km from center of Kullu town. Plenty of buses ply from Kullu to this camp. We arrived on the morning of May 23, 2014 from Delhi. The journey past Chandigarh, through the hill section, is exotic and is in itself a great scenic treat. After being mesmerized by the beauty of the journey thus far, we just couldn’t contain our excitement when we saw this.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/seobagh_bse.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/seobagh_bse.jpg?w=300&quot; alt=&quot;seobagh_bse&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Day 0 was a day for participants to arrive and settle down. We did the registration at the desk, got our tent and deposited luggage there. After some rest, some people in the group went to buy woolen clothes and other equipments for the trek from Kullu. Meanwhile, the rest of us played our favourite card game ‘Literature’ or in short ‘Lit’. Note, playing cards is not allowed in YHAI camps; but since this was our first time and we weren’t aware of the rules, we continued playing. The day ended without much drama.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 1 - Acclimatization Walk&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Day 1 started with a morning 5 o clock whistle for jogging and exercises. Apart from some rare days, where I had the enthusiasm to go for a jog in college, I am not a person who does body exercise regularly. We were asked to jog for about half a kilometer in the cold morning of Kullu. And then about an hour of stretching, bending and other type of exercises. Following this, we went to see-off the group that left for their trek to higher camp that day. YHAI has this tradition of new groups forming a guard of honor to the group that leaves to higher camps and wish them good luck. After having breakfast, we left for our acclimatization walk. We pack the ruck sack given to us with as much weight as possible and then climb a small hill nearby. Once we climb some distance, we get to a really scenic waterfall with cold waters from the glaciers flowing down. This is where the entire group is formally introduced to each other. Every person, gives a small introduction about himself - much like the college ‘interaction’ sessions, only odd thing being, this session is much more polite. Since, these were the early parts of the trekking expedition, people were amused by the waterfalls. We spent more than an hour at the place and clicked a lot of photographs.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/waterfall.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/waterfall.jpg?w=300&quot; alt=&quot;waterfall&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In the evening of Day 1, we were given an orientation and introduced to one Mr. Parvinder Singh Chauhan. He is supposedly a big person in the YHAI community. He spoke to us about the various other expeditions organized by YHAI in Dalhousie, Goa, etc. Finally, he gave a glimpse of the route we were going to trek through in the coming days. He gave a near-exhaustive list of problems that could arise and some possible ways to tackle them. Fortunately, we didn’t face even ten percent of those during the actual trek. In the night, we had a “camp fire”. This is yet another unique concept of this trek. Every night, all the participants assemble together and perform music, dance, eloquition, etc. This is a way to get the participants of the program even closer. At the base camp, the group that finished its Day 1 of the program performs. Hence, this was our group’s night to perform. We had some splendid performances from various group members. The group of 19, performed “Why this Kolaveri Di? “ which later got us the name “kolaveri boys”, among many other names. We had some good dance and music performance by other members in the group as well. We also, had the group that returned from their trek share their journey with us. This group had one of the toughest weather conditions at Chandrakhani pass. So their experience gave us a slightly tougher picture of the trek than what we eventually encountered. The Day came to an end, with the end of Camp Fire.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 2- Rappelling and Rock Climbing&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As usual, the day began with the 5 o clock whistle for morning jog and stretching exercises. After seeing off the group going to higher camp, we prepared ourselves to go for rappelling session. As a part of warming up sessions, YHAI organised rappelling and rock climbing sessions for the participants. We went to a nearby hill spot where two guides taught us the basics of rappelling. For people who have done it before, this was a smaller and less exciting version. But, for first-timers this was an awesome experience in itself. I was scared of heights and when I went near the rock, down which we had to rappel, I felt weak in my knees. But once I started descending, the experience felt very good. I was extremely fascinated by the entire rope and the safety process that I stayed by helping people get off the rope once they finished rappelling, for the entire time.&lt;/p&gt;
+
+&lt;p&gt;After lunch, we went to our next activity, which was rock climbing. For people who have done any kind of trekking before, this exercise was a mere joke. It was a fairly sturdy rock with lot of grooves. With about 2-3 steps, one could finish the climb. I had previously done wall climbing in Bangalore. Hence, I left without actually completing this exercise. It was getting slightly late and I had still a lot of packing left for the next day’s trip to higher camp. Once we reached the base camp, we were asked to deposit the extra luggage we have and keep only the items which we were talking to higher camps. The volunteers in the camp helped people estimate how much weight they will be able to carry throughout the trek. This process took about an hour until everyone was satisfied that they are taking enough items and the volunteers were satisfied that people aren’t carrying too much weight. The day ended with another Camp Fire. All of us were eagerly waiting for the next day to come. The day when we actually started our trek to higher camps.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 3 - From SeoBagh(3500 ft) to Yosgow(7900ft)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, the day of actual trekking had come. On this day we were to move to our first higher camp at Yosgow. This campsite was situated at a height of 7900 ft. This campsite was on the way to a very well-known village in Himachal Pradesh, Malana. This village is very well known for its Marijuana production. Our journey to Yosgow was split into two parts- First a bus journey from SeoBagh to Malana Hydorelectric power plant; Second, walk from this Hydroelectric power plant to the campsite.&lt;/p&gt;
+
+&lt;p&gt;We assembled in the grounds of SeoBagh base camp waiting to go through the guard of honour formed by other participants. Walking through this while others clapping and cheering gave an extreme sense of thrill. It was, as though, we were going on to achieve something extremely incredible. The YHAI members gave us candies and biscuits along with packed lunch for the day’s trek. We got onto the bus and played Antakshari the entire journey. They roads were extremely narrow and there were many blind corner turns. The bus driver was an experienced person and maneuvered the vehicle like a pro. The scenery was exquisite and the greenery was just unbelievable. After about two and half hours of journey, we reached the Malana Dam. This dam was situated at a height of 6000 ft. We assembled here, took a group picture and shouted our customary set of slogans to motivate ourselves.&lt;/p&gt;
+
+&lt;p&gt;1) “CP 28 can we make it, CP 28 haan bhai haan”&lt;/p&gt;
+
+&lt;p&gt;2) “DJ for gen sec, Pokku Pokku”&lt;/p&gt;
+
+&lt;p&gt;3) “Laal Salaam! Laal Saalam! Laal Saalam!”&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/group_pic_at_malana_dam.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/group_pic_at_malana_dam.jpg?w=300&quot; alt=&quot;group_pic_at_malana_dam&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;YHAI had assigned a local person from Malana village as a guide for us. He showed us the path and we walked along that way. For the next one and half hour or so, the path was motorable and we had no trouble walking through it. It was a road with constant ascent, hence, quite a few of them started losing breath. But soon, people got accustomed to the terrain and were feeling comfortable. We passed through tunnels and bridges along the way. Finally, we halted at a small stream for having our lunch, which was packed and given to us by the YHAI volunteers at SeoBagh base camp. The path soon became a bunch of rocks and we had to slowly step on rocks and continue the journey. The place had unimaginable amount greenery all around. There was a variety of flora and fauna around. The only one I could observe was the marijuana leaves. Besides this, there were other kinds of plants and insects, but unfortunately I have very little knowledge in this domain.&lt;/p&gt;
+
+&lt;p&gt;By evening 3 o clock, we reached our campsite at Yosgow. The camp was located on a small flat area of a sloping land. It was perfect for 5 tents and some sitting area. This was surrounded by farms which belonged to the Malana village. Hence, we were told to strictly not step onto any of them. Even for answering nature calls, there were designated spots covered with tent walls. We were asked to go only to those places.  At every camp, we were given a fixed set of drinks in a particular order. On arrival, we were given a welcome drink. Usually, it was one of the ‘Kissan Squash’ drinks mixed and kept before we arrive. We were then served tea followed by soup. Any kind of tiredness during the trek will immediately vanish on having these drinks. The most amazing thing was that, the quality was maintained throughout at all higher camps. We had our dinner and sat down to have our first camp fire away from base camp. Praveen and Suraj were kind enough to explain some star-gazing fundamentals to the group. The clear skies and lack of any obstruction served as a perfect place to look at the various constellations. Star-gazing and discussing about it was such a great experience. It reminded me of the following comic strip from Calvin and Hobbes&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/calvin-hobbes-star-gazing.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/calvin-hobbes-star-gazing.jpg?w=300&quot; alt=&quot;calvin-hobbes-star-gazing&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After a great discussion on stars and constellations we went off to sleep and thus, ended the Day.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Day 4- Yosgow(7900ft) to Behali(8300 ft)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This was the day when we would pass through the Malana village. This village has a weird history associated with it. People of this village believe that they were descendants of the Great Alexander. They regard everyone who come to their village as inferior. Hence, they don’t let strangers touch their walls and houses. They have boards out there which state -“ Photographs or Touching will attract a penalty of 2500 Rupees”. Apart from this, this village is well-known for its marijuana cultivation. This village produces one of Himachal Pradesh’s finest marijuana. In fact, a lot of it is exported to all parts of the country. Having such a history associated with this village, the volunteers at Yosgow camp gave us clear instructions and asked us to stick to the guide when we were crossing this village.&lt;/p&gt;
+
+&lt;p&gt;The journey started with a steep ascent on the rocks towards the entrance of the Malana village. This part was tiring and most people took a lot of breaks on the way. This path was also open towards the non-mountain side. Hence, it gave opportunity to do a lot of classy photography. The scenery was perfect for a desktop wallpaper like photo.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/malana.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/malana.jpg?w=300&quot; alt=&quot;malana&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We took a brief halt just before entering the Malana village to ensure that everyone has indeed switched off their cameras and other recording devices. Malana village, in every sense, was a typical Indian village. There was garbage strewn all over. The cattle were reared in almost every household. The droppings of goats and sheep left a distinct bad smell throughout. There were children running and playing and some elderly men sitting under a tree and playing cards. There were lots of people smoking in the village but not a single one of them was tobacco. I guess being a major cultivator of marijuana has its own good effects! In about 20 minutes we passed through the village. We were relieved in many ways. Firstly, no more restrictions on touching the walls etc. And secondly, the streets of villages smelled horrible with the garbage and the animal droppings.&lt;/p&gt;
+
+&lt;p&gt;Once we got past Malana, it was a road downwards for about half hour. Once again, we stopped near a stream to have our lunch. To our happiness, this time there was a small tent which made Maggi and Omlette. They also sold biscuits and cool drinks. This place turned out to be heaven since we had some variety other than the packed food. Almost everyone had maggi and omlette along with their lunch. At this point there were heavy rains and the place got cold real quick. The distinct feature about these places is that once sunlight is cut, the temperature drops real fast. Direct sunlight is the only source of heat. Standing in the shade of another object for about 5 minutes is enough to bring the chillness back.&lt;/p&gt;
+
+&lt;p&gt;We proceeded ahead in the rains towards our base camp. The path was slightly slippery due to the rains and at some points it was unmade. There was a reservoir that was being built in this region and hence, the path was bad. With the help of one another, people slowly made past this and proceeded towards the campsite. The walk was long and hard and at about 4:30 we got the first glimpses of our campsite. And in another 40 minutes we finally reached the campsite. As a custom, we shouted “Fire, Fire, Camp Fire” as soon as we reached the camp.&lt;/p&gt;
+
+&lt;p&gt;This campsite was the most scenic in my opinion. The campsite was situated by a fast flowing stream. Towards one side was the majestic view of the Himalayas. Towards the other side was the construction of the big reservoir. The winds in this campsite were particularly strong due to the presence of the stream. This made the nights very cold. The series of drinks we received on reaching and the exotic scenery compensated for all the fatigue during the day.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://karthikabinav.files.wordpress.com/2014/06/behali_camp.jpg&quot;&gt;&lt;img src=&quot;http://karthikabinav.files.wordpress.com/2014/06/behali_camp.jpg?w=300&quot; alt=&quot;Behali_camp&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The description of the remaining days will be continued in the next part of this post. At this point, I would like to thank Abhishek, Surya, Sachin and Vishal for the photographs used in this post.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Jun 2014 14:34:53 +0000</pubDate>
+        <link>http://localhost:4000/blog/misc/2014/06/06/chandrakhani-pass-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/misc/2014/06/06/chandrakhani-pass-1/</guid>
+      </item>
+    
+  </channel>
+</rss>
