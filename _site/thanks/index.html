@@ -12,20 +12,33 @@
     <meta name="robots" content="all">
     <meta name="author" content="Karthik A Sankararaman">
     
-    <link rel="canonical" href="http://localhost:4000/thanks/">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Blog" href="/feed.xml" />
+    <link rel="canonical" href="http://localhost:4000/blog/thanks/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Blog" href="/blog/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201707081126" type="text/css">
+    <link rel="stylesheet" href="/blog/css/pixyll.css?201807102248" type="text/css">
 
     <!-- Fonts -->
     
-    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     
 
     <!-- MathJax -->
+    
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+                    }
+                      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
     
 
     <!-- Verifications -->
@@ -43,6 +56,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@karthikabinav" />
     
     <meta name="twitter:title" content="Thanks For Your Message" />
     <meta name="twitter:description" content="" />
@@ -76,7 +91,7 @@
     
 </head>
 
-<body class="site">
+<body class="site animated fade-in-down">
   
 	
 
@@ -84,13 +99,13 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://localhost:4000" class="site-title">Blog</a>
+      <a href="http://localhost:4000/blog" class="site-title">Blog</a>
       <nav class="site-nav">
         
     
 
     
-        <a href="/about/">About Pixyll</a>
+    <a href="/blog/about/">About</a>
     
 
     
@@ -107,34 +122,40 @@
 
     
 
-    
-
-
-    
-
-    
-
-    
-        <a href="/contact/">Say Hello</a>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 
 
       </nav>
       <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/karthikabinav"></a>
+    
+    
+    
+    <a class="fa fa-rss" href="/blog/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/karthikabinav"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:karthikabinavs@gmail.com"></a>
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
       
     </div>
   </div>
@@ -160,12 +181,16 @@
   <footer class="center">
   <div class="measure">
     <small>
-      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
-      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      Theme available on <a href="https://github.com/johnotander/pixyll">Github</a>.
     </small>
   </div>
 </footer>
-
+<!-- AnchorJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.0.0/anchor.min.js"></script>
+<script>
+    anchors.options.visible = 'always';
+    anchors.add('article h2, article h3, article h4, article h5, article h6');
+</script>
 
 </body>
 </html>
